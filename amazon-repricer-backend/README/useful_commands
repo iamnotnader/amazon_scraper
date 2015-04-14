@@ -10,7 +10,7 @@ curl -H "Content-type: application/json" -X POST -d ' {"username":"iamn", "passw
 curl -u iamn:pw  http://localhost:8000/
 
 
-Fucking with mongohq:
+Messing with mongohq:
 1) Add the MongoHQ addon by going to the Heroku site.
 2) You can administer the add-on by going to your app on the Heroku dashboard, going under "Add-ons" toward the bottom and clicking MongoHQ. This takes you to the gui.
 3) Get the URL by running: heroku run 'echo $MONGOHQ_URL'. It will be of the form: mongodb://username:password@host:port/database
