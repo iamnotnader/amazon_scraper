@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {{view Ember.Select
+            content=resultSetNames
+            value=selectedResult
+            class="form-control"
+            }}
+        </div>
+        <div class="col-md-1">
+            <div>
+                <button type="button"
+                    {{action 'deleteButtonPressed'}}
+                        class="btn btn-mini btn-danger form-control">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div>
+                <button type="button"
+                    {{action 'showResultsButtonPressed'}}
+                        class="btn btn-mini btn-primary form-control">
+                    Show Results
+                </button>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div>
+                <button type="button"
+                    {{action 'exportPressed'}}
+                        class="btn btn-mini btn-primary btn-success form-control">
+                    Export
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    {{#if listedItems}}
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Listings</div>
+
+            {{view App.ListingsListView}}
+        </div>
+    {{/if}}
+</div>

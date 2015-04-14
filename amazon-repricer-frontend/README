@@ -1,0 +1,29 @@
+First, clone and cd into the ember app:
+git clone https://bitbucket.org/iamnotnader/amazon-repricer-frontend
+cd amazon-repricer-frontend
+
+Install the things you need (ember-tools, coffeescript, and  compass):
+npm install ember-tools
+npm install coffee-script
+sudo gem install compass
+
+Now run the build tasks to watch your coffeescript, js, and sass files:
+./node_modules/coffee-script/bin/coffee --compile --watch --output js/ coffee/
+compass watch
+./node_modules/ember-tools/bin/ember build --watch
+
+Running the site locally
+To do this, just open index.html in the amazon-repricer-frontend directory
+
+The development loop
+coffeescript files are stored in the coffee/ directory and compile into the js/ directory when you run the coffee command above
+Ember takes the js/ that got compiled and builds it into a single application.js that’s referenced by index.html
+When you modify coffee files while the three build commands above are running, your index.html should just update automatically
+IMPORTANT: template files are stored in js/templates instead of coffee/templates. This is because coffeescript only moves coffee files into the js directory
+
+Deploying to Heroku
+It’s been running on my account but use the Heroku guide to deploy it to a different server. Should just be a matter of running:
+heroku login ← enter YOUR credentials
+heroku create ← maybe change the name if you want
+git push heroku master ← you’re done!
+

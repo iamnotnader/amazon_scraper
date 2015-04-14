@@ -1,0 +1,54 @@
+html, body {
+  margin: 20px 0px;
+}
+
+form {
+    width: 100%;
+}
+
+.selectpicker {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+}
+
+.search-button {
+    height: 58px;
+}
+
+$inquiry-save-name-height: 2em;
+.input-save-name {
+    height: $inquiry-save-name-height;
+}
+
+.button-save-name {
+    height: $inquiry-save-name-height;
+}
+
+.border-around-element {
+  border: 1px solid;
+}
+
+div.row {
+  padding-top: 10px;
+}
+
+$inquiry-row-height: 400px;
+.fixedHeightRowDiv {
+  height: $inquiry-row-height;
+  width: 100px;
+  overflow: hidden;
+}
+
+.ember-list-view {
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ember-list-item-view {
+  position: absolute;
+  width: 100%;
+}

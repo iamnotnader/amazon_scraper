@@ -1,0 +1,27 @@
+<!-- Table -->
+<table class="table">
+    <thead>
+    <tr>
+        <th><b>ASIN</b></th>
+        <th><b>SKU</b></th>
+        <th><b>Price</b></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each listedItems}}
+        <tr>
+            <th>{{asin}}</th>
+            <th>{{sku}}</th>
+            <th>${{price}}</th>
+            <th>
+                <button type="button"
+                    {{action 'deleteEntry' sku}}
+                        class="btn btn-mini btn-danger form-control">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </th>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

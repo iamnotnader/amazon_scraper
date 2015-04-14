@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            {{view Ember.Select
+            content=resultSetNames
+            value=selectedResult
+            class="form-control"
+            }}
+        </div>
+        <div class="col-md-1">
+            <div>
+            <button type="button"
+                {{action 'deleteButtonPressed'}}
+                    class="btn btn-mini btn-danger form-control">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div>
+            <button type="button"
+                {{action 'showResultsButtonPressed'}}
+                class="btn btn-mini btn-primary form-control"
+                {{bind-attr disabled=selectedResultsMatchDisplayed}}>
+                Show Results
+            </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    {{#if lineAboveProgressBar}}
+        <div class="row">
+            {{lineAboveProgressBar}}
+        </div>
+        <div class="row">
+            {{timeRemaining}}
+        </div>
+        <div class="row">
+            {{view App.ProgressBar percentBinding="percentOfPagesFetched"}}
+        </div>
+    {{/if}}
+    {{#if finalCleanedList}}
+        {{#each page in pages}}
+            <button type="button" {{action 'changePage' _view.contentIndex}} class="btn btn-primary">{{_view.contentIndex}}</button>
+        {{/each}}
+        <br>
+        {{#if currentPage}}
+            {{#each currentPage}}
+                {{partial "inquiry_row_item"}}
+            {{/each}}
+        {{else}}
+            NO PAGES :(
+        {{/if}}
+    {{/if}}
+</div>

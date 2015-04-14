@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        {{#if sellerNames}}
+        <!-- Table -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th><b>Name</b></th>
+                <th><b>Code</b></th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#each sellerNames}}
+                    <tr>
+                        <th><a {{bind-attr href="manufacturerLink"}}>{{manufacturerName}}</a></th>
+                        <th>{{_id}}</th>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{else}}
+            No sellers :(
+        {{/if}}
+    </div>
+ </div>

@@ -1,0 +1,2 @@
+coffee --watch --output js/ coffee/ &
+compass watch styles/ &

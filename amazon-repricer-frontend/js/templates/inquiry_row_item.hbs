@@ -1,0 +1,77 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img {{bind-attr src=imageUrl}} class="img-thumbnail" width="100%" max-height="100px">
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h4><a {{bind-attr href=url}} {{bind-attr title=title}} target="_blank">{{title}}</a></h4>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dropdown" z-index="2">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" z-index="3">
+                                List Item
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" z-index="4">
+                                <li role="presentation" class="dropdown-header">List non-original</li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '3C' itemIndex manufacturer manufacturerLink}}>List 3C for {{determinePrice '3C' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '4C' itemIndex manufacturer manufacturerLink}}>List 4C for {{determinePrice '4C' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '6C' itemIndex manufacturer manufacturerLink}}>List 6C for {{determinePrice '6C' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '8C' itemIndex manufacturer manufacturerLink}}>List 8C for {{determinePrice '8C' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '9C' itemIndex manufacturer manufacturerLink}}>List 9C for {{determinePrice '9C' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '12C' itemIndex manufacturer manufacturerLink}}>List 12C for {{determinePrice '12C' controller.minPrices price controller.discountPercent}}</a></li>
+
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation" class="dropdown-header">List original</li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '3CO' itemIndex manufacturer manufacturerLink}}>List 3C for {{determinePrice '3CO' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '4CO' itemIndex manufacturer manufacturerLink}}>List 4C for {{determinePrice '4CO' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '6CO' itemIndex manufacturer manufacturerLink}}>List 6C for {{determinePrice '6CO' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '8CO' itemIndex manufacturer manufacturerLink}}>List 8C for {{determinePrice '8CO' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '9CO' itemIndex manufacturer manufacturerLink}}>List 9C for {{determinePrice '9CO' controller.minPrices price controller.discountPercent}}</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" {{action 'listButtonPressed' '12CO' itemIndex manufacturer manufacturerLink}}>List 12C for {{determinePrice '12CO' controller.minPrices price controller.discountPercent}}</a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 border-around-element">
+                        <h4>Price: </h4> {{price}}
+                    </div>
+                    <div class="col-md-3 border-around-element">
+                        <h4>Rating: </h4> {{rating}}
+                    </div>
+                    <div class="col-md-3 border-around-element">
+                        <h4>ASIN: </h4> {{asin}}
+                    </div>
+                    <div class="col-md-3 border-around-element">
+                        <h4>Manufacturer: </h4> <a {{bind-attr href="manufacturerLink"}}>{{manufacturer}}</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 border-around-element">
+                        <h4>Technical Details: </h4> {{{technicalDetails}}}
+                    </div>
+                    <div class="col-md-6 border-around-element">
+                        <h4>Product Description: </h4> {{{productDescription}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /input-group
+                {{rank}}
+             <br>
+
+         <br>
+        {{reviewsCount}} <br>
+        {{sellersCount}} <br>
+        {{url}}
+
+
+        -->
+    </div>
